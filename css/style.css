@@ -1,0 +1,28 @@
+/**
+
+Author: Aum Trivedi;
+
+**/
+body
+{
+	background: linear-gradient(to right, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 62%, rgba(254,254,254,1) 68%, rgba(254,254,254,1) 93%, rgba(254,254,254,1) 100%);
+}
+#calc_body
+{
+	width: 350px;
+	margin: 0 auto;
+}
+.btn-padding
+{
+	
+	height: 50px;
+	width: 50px;
+	margin-top: 10px;
+	font-size: 19px;
+	border-radius: 40px;
+}
+.txtfild-padding
+{
+	margin-top:10px;
+	width: 320px;
+}
