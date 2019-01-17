@@ -57,6 +57,7 @@ function checkKeyPress(command){
             }
 }
  
+ 
 // Addition between numbers
 function add()
 {
@@ -129,5 +130,6 @@ function removeData(){
      
     document.getElementById('display_text').value =""; 
 }
+ 
  
 
