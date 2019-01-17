@@ -10,44 +10,53 @@
 		<div class="row">
 			<div class="col-sm-12">
 			<div id="calc_body">
+ 
+			 <textarea class="form-control txtfild-padding" id="history_data" rows="3" readonly=""></textarea>
+			<input id="display_text" type="text" class="form-control txtfild-padding" placeholder="0" pattern= "[0-9]" maxlength="10"autofocus><br>
+ 
 
-			<input id="display_text" type="text" class="form-control txtfild-padding" placeholder="0" pattern= "[0-9]"autofocus><br>
-
+			 
 			<div class="btn_class">
-				<button id="seven" class="btn btn-info btn-padding" onClick="checkKeyPress();" value="7">7</button>
-				<button id="eight" class="btn btn-info btn-padding" onClick="checkKeyPress();" value="8">8</button>
-				<button id="nine" class="btn btn-info btn-padding" onClick="checkKeyPress();">9</button>
-				<button id="divide" class="btn btn-info btn-padding" onClick="checkKeyPress();">/</button>
-				<button id="modulo" class="btn btn-info btn-padding" onClick="checkKeyPress();">%</button>
-				<button id="delete_char" class="btn btn-info btn-padding" onClick="checkKeyPress();"><=</button>
+				<button id="seven" class="btn btn-info btn-padding" onClick="checkKeyPress('seven')">7</button>
+				<button id="eight" class="btn btn-info btn-padding" onClick="checkKeyPress('eight');">8</button>
+				<button id="nine" class="btn btn-info btn-padding" onClick="checkKeyPress('nine');">9</button>
+				<button id="devide" class="btn btn-info btn-padding" onClick="divide()">/</button>
+				<button id="modulo" class="btn btn-info btn-padding" onClick="mod()">%</button>
+				<button id="delete_char" class="btn btn-info btn-padding" onClick="deleteChar()">D</button>
 				<br>
+ 
+				<button id="four" class="btn btn-info btn-padding" onClick="checkKeyPress('four');">4</button>
+				<button id="five" class="btn btn-info btn-padding" onClick="checkKeyPress('five');">5</button>
+				<button id="six" class="btn btn-info btn-padding" onClick="checkKeyPress('six');">6</button>
+				<button id="multiPly" class="btn btn-info btn-padding" onClick="multiply();">*</button>
+				<button id="square" class="btn btn-info btn-padding" onClick="square();">X<sup>2</sup></button>
+				<button id="qube" class="btn btn-info btn-padding" onClick="qube();">X<sup>3</sup></button><br/>
+		 
 
-				<button id="four" class="btn btn-info btn-padding" onClick="checkKeyPress();">4</button>
-				<button id="five" class="btn btn-info btn-padding" onClick="checkKeyPress();">5</button>
-				<button id="six" class="btn btn-info btn-padding" onClick="checkKeyPress();">6</button>
-				<button id="multipy" class="btn btn-info btn-padding" onClick="checkKeyPress();">*</button>
-				<button id="square" class="btn btn-info btn-padding" >X<sup>2</sup></button>
-				<button id="qube" class="btn btn-info btn-padding">X<sup>3</sup></button><br/>
+		
+				<button id="one" class="btn btn-info btn-padding" onClick="checkKeyPress('one')">1</button>
+				<button id="two" class="btn btn-info btn-padding" onClick="checkKeyPress('two');">2</button>
+				<button id="three" class="btn btn-info btn-padding" onClick="checkKeyPress('three');">3</button>
+				<button id="add" class="btn btn-info btn-padding" onClick="add();">+</button>
+				<button id="square_root" class="btn btn-info btn-padding" onClick="sqrt();">√X</button>
+				<button id="fact" class="btn btn-info btn-padding" onClick="fact();">!</button><br>
+  
           
-				<button id="one" class="btn btn-info btn-padding">1</button>
-				<button id="two" class="btn btn-info btn-padding">2</button>
-				<button id="three" class="btn btn-info btn-padding">3</button>
-				<button id="add" class="btn btn-info btn-padding">+</button>
-				<button id="square_root" class="btn btn-info btn-padding">√X</button>
-				<button id="fact" class="btn btn-info btn-padding">!</button><br>
-
-				<button id="zero" class="btn btn-info btn-padding">0</button>
-				<button id="point" class="btn btn-info btn-padding">.</button>
-				<button id="exponent" class="btn btn-info btn-padding">X<sup>N</sup></button>
-				<button id="sub" class="btn btn-info btn-padding">-</button>
-				<button id="remove" class="btn btn-info btn-padding">C</button>
-				<button id="equal" class="btn btn-info btn-padding">=</button>
+				 
+ 
+			     <button id="zero" class="btn btn-info btn-padding" onClick="checkKeyPress('zero');">0</button>
+				<button id="point" class="btn btn-info btn-padding"  onClick="checkKeyPress('point');">.</button>
+				<button id="exponent" class="btn btn-info btn-padding" onClick="checkKeyPress('expo');">X<sup>N</sup></button>
+				<button id="sub" class="btn btn-info btn-padding" onClick="sub();">-</button>
+				<button id="remove" class="btn btn-info btn-padding" onClick="removeData()">C</button>
+				<button id="equal" class="btn btn-info btn-padding" onClick="equalsto();">=</button>
 		
 			</div>
+		</div>
 		</div>
 	</div>
 </div>
 	<script type="text/javascript" src="js/calculator.js"></script>
-	<script type="text/javascript" src="js/bo.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
