@@ -101,7 +101,7 @@ function add()
     var currentString = document.getElementById('display_text').value.toString(); 
     var lastChar = currentString[currentString.length - 1];
     console.log(lastChar);
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") { //Prevent multiple time  special character
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") { //Prevent multiple time  special character
 
         document.getElementById('display_text').value = document.getElementById('history_data').value;
     }
@@ -117,7 +117,7 @@ function sub()
     var currentString = document.getElementById('display_text').value.toString();
     var lastChar = currentString[currentString.length - 1];
     console.log(lastChar);
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
 
         document.getElementById('display_text').value = document.getElementById('history_data').value;
     }
