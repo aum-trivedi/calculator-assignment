@@ -255,6 +255,7 @@ function deleteChar()
 {
     document.getElementById('history_data').value = "";
     document.getElementById('display_text').value =""; 
+    document.getElementById("history_display").innerHTML = " "; 
 }
 
 //Calculate factorial given number
