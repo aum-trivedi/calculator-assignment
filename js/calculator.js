@@ -16,71 +16,69 @@ onfocustxt.focus();
 function checkKeyPress(command){
     if(command=="one")
     {
-          
-         onfocustxt.focus(); 
+         
+         // Always focus on result textfield
         document.getElementById('display_text').value += "1"; // When press button display 1 in textfield
         document.getElementById('history_data').value = document.getElementById('display_text').value; // When press button display 1 in History textarea
 
     }
     if(command=="two" )
     {
-         onfocustxt.focus(); 
+         
         document.getElementById('display_text').value += "2";  
         document.getElementById('history_data').value = document.getElementById('display_text').value;  
     }
     if(command=="three")
     {
          // Always focus on result textfield
-         onfocustxt.focus(); 
         document.getElementById('display_text').value += "3";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="four")
     {
-        onfocustxt.focus(); 
+       
         document.getElementById('display_text').value += "4";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="five")
     {
-      onfocustxt.focus(); 
+      
         document.getElementById('display_text').value += "5";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="six")
     {
-         onfocustxt.focus(); 
+         
         document.getElementById('display_text').value += "6";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
 
     if(command=="seven")
     {
-         onfocustxt.focus(); 
+         
         document.getElementById('display_text').value += "7";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="eight")
     {
-        onfocustxt.focus(); 
+        
         document.getElementById('display_text').value += "8";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="nine")
     {
-     onfocustxt.focus(); 
+     
         document.getElementById('display_text').value += "9";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="zero")
     {
-        onfocustxt.focus(); 
+        
         document.getElementById('display_text').value += "0";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
     }
     if(command=="point")
     {
-        onfocustxt.focus(); 
         var currentString = document.getElementById('display_text').value.toString(); 
         var lastChar = currentString[currentString.length - 1];
         console.log(lastChar);
@@ -89,7 +87,7 @@ function checkKeyPress(command){
             document.getElementById('display_text').value = document.getElementById('history_data').value;
         }
         else{
-          
+        onfocustxt.focus();
         document.getElementById('display_text').value += ".";
         document.getElementById('history_data').value = document.getElementById('display_text').value;
         }
@@ -103,7 +101,7 @@ function add()
     var currentString = document.getElementById('display_text').value.toString(); 
     var lastChar = currentString[currentString.length - 1];
     console.log(lastChar);
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") { //Prevent multiple time  special character
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") { //Prevent multiple time  special character
 
         document.getElementById('display_text').value = document.getElementById('history_data').value;
     }
@@ -119,7 +117,7 @@ function sub()
     var currentString = document.getElementById('display_text').value.toString();
     var lastChar = currentString[currentString.length - 1];
     console.log(lastChar);
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
 
         document.getElementById('display_text').value = document.getElementById('history_data').value;
     }
@@ -136,16 +134,20 @@ function multiply()
     var currentString = document.getElementById('display_text').value.toString();
     var lastChar = currentString[currentString.length - 1];
     console.log(lastChar);
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "÷") {
 
         document.getElementById('display_text').value = document.getElementById('history_data').value;
     }
     else{
 
-         
+        if (event.key == "*") {
+            document.getElementById('history_data').value = document.getElementById('display_text').value;
+        }
+
+        else{
             document.getElementById('display_text').value += "*";
             document.getElementById('history_data').value = document.getElementById('display_text').value;
-         
+        }
     }
 }
 
@@ -168,17 +170,7 @@ function divide()
 //Exponent X^Y with double operands
 function exponent()
 {
-     var currentString = document.getElementById('display_text').value;
-    var lastChar = currentString[currentString.length - 1];
-    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/" || lastChar === "^") {
-
-        document.getElementById('display_text').value = document.getElementById('history_data').value;
-    }
-    else{
-    document.getElementById('display_text').value += "^";    
-    document.getElementById('history_data').value = document.getElementById('display_text').value;
-    }
-    
+    document.getElementById('display_text').value += "^";
 
 }
 
@@ -263,7 +255,7 @@ function deleteChar()
 {
     document.getElementById('history_data').value = "";
     document.getElementById('display_text').value =""; 
-    document.getElementById("history_display").innerHTML = " ";
+    document.getElementById("history_display").innerHTML = " "; 
 }
 
 //Calculate factorial given number
