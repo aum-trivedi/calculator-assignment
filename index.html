@@ -1,59 +1,82 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title>Calculator Assignment</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-12">
-			<div id="calc_body">
- 
-			 <textarea class="form-control txtfild-padding" id="history_data" rows="3" readonly=""></textarea>
-			<input id="display_text" type="text" class="form-control txtfild-padding" placeholder="0" pattern= "[0-9]" maxlength="10"autofocus><br>
- 
+    <head>
+        <title>Calculator Assignment</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>History records</h2>
 
-			 
-			<div class="btn_class">
-				<button id="seven" class="btn btn-info btn-padding" onClick="checkKeyPress('seven')">7</button>
-				<button id="eight" class="btn btn-info btn-padding" onClick="checkKeyPress('eight');">8</button>
-				<button id="nine" class="btn btn-info btn-padding" onClick="checkKeyPress('nine');">9</button>
-				<button id="devide" class="btn btn-info btn-padding" onClick="divide();">/</button>
-				<button id="modulo" class="btn btn-info btn-padding" onClick="mod();">%</button>
-				<button id="delete_char" class="btn btn-info btn-padding" onClick="deleteChar()">D</button>
-				<br>
- 
-				<button id="four" class="btn btn-info btn-padding" onClick="checkKeyPress('four');">4</button>
-				<button id="five" class="btn btn-info btn-padding" onClick="checkKeyPress('five');">5</button>
-				<button id="six" class="btn btn-info btn-padding" onClick="checkKeyPress('six');">6</button>
-				<button id="multiPly" class="btn btn-info btn-padding" onClick="multiply();">*</button>
-				<button id="square" class="btn btn-info btn-padding" onClick="square();">X<sup>2</sup></button>
-				<button id="qube" class="btn btn-info btn-padding" onClick="qube();">X<sup>3</sup></button><br/>
-		 
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Operations</th>
 
-		
-				<button id="one" class="btn btn-info btn-padding" onClick="checkKeyPress('one')">1</button>
-				<button id="two" class="btn btn-info btn-padding" onClick="checkKeyPress('two');">2</button>
-				<button id="three" class="btn btn-info btn-padding" onClick="checkKeyPress('three');">3</button>
-				<button id="add" class="btn btn-info btn-padding" onClick="add();">+</button>
-				<button id="square_root" class="btn btn-info btn-padding" onClick="sqrt();">√X</button>
-				<button id="fact" class="btn btn-info btn-padding" onClick="fact();">!</button><br>
-  
-				<button id="zero" class="btn btn-info btn-padding" onClick="checkKeyPress('zero');">0</button>
-				<button id="point" class="btn btn-info btn-padding"  onClick="checkKeyPress('point');">.</button>
-				<button id="exponent" class="btn btn-info btn-padding" onClick="exponent();">X<sup>N</sup></button>
-				<button id="sub" class="btn btn-info btn-padding" onClick="sub();">-</button>
-				<button id="remove" class="btn btn-info btn-padding" onClick="removeData()">C</button>
-				<button id="equal" class="btn btn-info btn-padding" onClick="equalsto();">=</button>
-		
-			</div>
-		</div>
-		</div>
-	</div>
-</div>
-	<script type="text/javascript" src="js/calculator.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-</body>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><h4 id="history_display"></h5></td><br>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-7">
+                    <h2 >Solulab calculator assignment</h2>
+                    <div id="calc_body">
+
+                        <textarea class="form-control txtfild-padding" id="history_data" rows="3" readonly=""></textarea>
+                        <input id="display_text" type="text" class="form-control txtfild-padding" placeholder="0"  autofocus><br>
+
+
+
+                        <div class="btn_class">
+                            <button id="seven" class="btn btn-info btn-padding" onClick="checkKeyPress('seven')">7</button>
+                            <button id="eight" class="btn btn-info btn-padding" onClick="checkKeyPress('eight');">8</button>
+                            <button id="nine" class="btn btn-info btn-padding" onClick="checkKeyPress('nine');">9</button>
+                            <button id="devide" class="btn btn-info btn-padding" onClick="divide();">/</button>
+                            <button id="modulo" class="btn btn-info btn-padding" onClick="historyMod();">H</button>
+                            <button id="delete_char" class="btn btn-info btn-padding" onClick="deleteChar()">D</button>
+                            <br>
+
+                            <button id="four" class="btn btn-info btn-padding" onClick="checkKeyPress('four');">4</button>
+                            <button id="five" class="btn btn-info btn-padding" onClick="checkKeyPress('five');">5</button>
+                            <button id="six" class="btn btn-info btn-padding" onClick="checkKeyPress('six');">6</button>
+                            <button id="multiPly" class="btn btn-info btn-padding" onClick="multiply();">*</button>
+                            <button id="square" class="btn btn-info btn-padding" onClick="square();">x<sup>2</sup></button>
+                            <button id="qube" class="btn btn-info btn-padding" onClick="cube();">x<sup>3</sup></button><br/>
+
+
+
+                            <button id="one" class="btn btn-info btn-padding" onClick="checkKeyPress('one')">1</button>
+                            <button id="two" class="btn btn-info btn-padding" onClick="checkKeyPress('two');">2</button>
+                            <button id="three" class="btn btn-info btn-padding" onClick="checkKeyPress('three');">3</button>
+                            <button id="add" class="btn btn-info btn-padding" onClick="add();">+</button>
+                            <button id="square_root" class="btn btn-info btn-padding" onClick="sqrt();"><span style="white-space: nowrap; font-size:medium;">&radic;<span style="text-decoration:overline;">x</span></span></button>
+                            <button id="fact" class="btn btn-info btn-padding" onClick="fact();">!</button><br>
+
+                            <button id="zero" class="btn btn-info btn-padding" onClick="checkKeyPress('zero');">0</button>
+                            <button id="point" class="btn btn-info btn-padding"  onClick="checkKeyPress('point');">.</button>
+                            <button id="exponent" class="btn btn-info btn-padding" onClick="exponent();">x<sup>y</sup></button>
+                            <button id="sub" class="btn btn-info btn-padding" onClick="sub();">-</button>
+                            <button id="remove" class="btn btn-info btn-padding" onClick="removeData()">C</button>
+                            <button id="equal" class="btn btn-info btn-padding" onClick="equalsto();">=</button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="js/calculator.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    </body>
 </html>
