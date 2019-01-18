@@ -7,64 +7,72 @@ var firstnumber;
 var secondnumber;
 var result;
 var operations;
-//This function for get Button key  stroke
-
-
-
+var onfocustxt=document.getElementById('display_text');
 function checkKeyPress(command){
- 	if(command=="one" || document.getElementById('display_text').value == "0" || document.getElementById('display_text').value == result)
-            {
-               document.getElementById('display_text').value += "1";
-               document.getElementById('history_data').value = document.getElementById('display_text').value;
-            }
+ 	if(command=="one")
+   {
+    onfocustxt.focus();
+    document.getElementById('display_text').value += "1";
+    document.getElementById('history_data').value = document.getElementById('display_text').value;
+   }
     if(command=="two" )
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "2";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="three")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "3";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="four")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "4";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="five")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "5";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="six")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "6";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     
     if(command=="seven")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "7";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="eight")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "8";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
      if(command=="nine")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "9";
                  document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="zero")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += "0";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
     if(command=="point")
             {
+                onfocustxt.focus();
                document.getElementById('display_text').value += ".";
                 document.getElementById('history_data').value = document.getElementById('display_text').value;
             }
@@ -74,24 +82,61 @@ function checkKeyPress(command){
 // Addition between numbers
 function add()
 {
-     
-   document.getElementById("display_text").value += "+";
-   document.getElementById('history_data').value = document.getElementById('display_text').value;
+   var currentString = document.getElementById('display_text').value.toString();
+   var lastChar = currentString[currentString.length - 1];
+   console.log(lastChar);
+   if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
+    
+   document.getElementById('display_text').value = document.getElementById('history_data').value;
+   }
+   else{
+    
+       
+      document.getElementById('display_text').value += "+";
+      document.getElementById('history_data').value = document.getElementById('display_text').value;
+       
+
+   }
 }
 
 // Substraction between numbers
 function sub()
 {
-   document.getElementById("display_text").value += "-";
-   document.getElementById('history_data').value = document.getElementById('display_text').value;
+   var currentString = document.getElementById('display_text').value.toString();
+   var lastChar = currentString[currentString.length - 1];
+   console.log(lastChar);
+   if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
+    
+   document.getElementById('display_text').value = document.getElementById('history_data').value;
+   }
+   else{
+      document.getElementById('display_text').value += "-";
+      document.getElementById('history_data').value = document.getElementById('display_text').value;
+   }
     
 }
 
 // Multiply between numbers
 function multiply()
 {
-     document.getElementById("display_text").value += "*";
-   document.getElementById('history_data').value = document.getElementById('display_text').value;
+   var currentString = document.getElementById('display_text').value.toString();
+   var lastChar = currentString[currentString.length - 1];
+   console.log(lastChar);
+   if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "÷") {
+    
+   document.getElementById('display_text').value = document.getElementById('history_data').value;
+   }
+   else{
+     
+      if (event.key == "*") {
+         document.getElementById('history_data').value = document.getElementById('display_text').value;
+      }
+   
+      else{
+      document.getElementById('display_text').value += "*";
+      document.getElementById('history_data').value = document.getElementById('display_text').value;
+      }
+   }
 }
 
 // Square with single operands
@@ -118,31 +163,49 @@ function sqrt()
 // Square between two operands
 function divide()
 {
-     document.getElementById("display_text").value += "/";
-   document.getElementById('history_data').value = document.getElementById('display_text').value; 
+   var currentString = document.getElementById('display_text').value;
+   var lastChar = currentString[currentString.length - 1];
+   console.log(lastChar);
+   if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+    
+   document.getElementById('display_text').value = document.getElementById('history_data').value;
+   }
+   else{
+      document.getElementById('display_text').value += "/";
+      document.getElementById('history_data').value = document.getElementById('display_text').value;
+   }
 }
 
 function fact()
 {
-     var c=document.getElementById("display_text").value
+     var c=document.getElementById("display_text").value;
     document.getElementById("display_text").value = factorial(c);
    document.getElementById('history_data').value = document.getElementById('display_text').value;
 }
 
 function exponent()
 {
+   document.getElementById('display_text').value += "^";
    
-    var x="^";
-   firstnumber=document.getElementById("display_text").value;
-   var a=Array();
-   a.push(document.getElementById("display_text").value);
-   console.log(a);
-   document.getElementById('history_data').value = firstnumber+x+secondnumber;
 }
+
 function equalsto(){
- 
- document.getElementById("display_text").value = eval(document.getElementById("display_text").value);
-  
+   var currentString = document.getElementById('display_text').value.toString();
+   var lastChar = currentString[currentString.length - 1];
+    
+   if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+      document.getElementById('display_text').value="Must End with Operand";
+   }
+   //if(currentString=="^")
+   if(currentString.indexOf("^")>=0) 
+   {
+    console.log("HERE");
+   var currentString = document.getElementById('display_text').value.toString();
+   var aa=currentString.split("^");
+   document.getElementById('display_text').value=Math.pow(parseInt(aa[0]),parseInt(aa[1]))
+   }
+   // }
+    document.getElementById("display_text").value=eval(document.getElementById("display_text").value); 
 }
 
 function removeData(){
@@ -155,11 +218,33 @@ function deleteChar()
     document.getElementById('history_data').value = "";
     document.getElementById('display_text').value =""; 
 }
- 
- 
-
 function factorial(x) {
   if (x < 0) return;
   if (x === 0) return 1;
   return x * factorial(x - 1);
 }
+
+window.addEventListener("keypress", event => {
+   if (event.key == "=") {
+      if(document.getElementById('display_text').value != " ")
+      {
+         
+         equalsto();
+      }
+   }
+   if (event.key == "+") {
+       
+
+         add();
+      
+   }
+   if (event.key == "*") {
+      if(document.getElementById('display_text').value != " ")
+      {
+
+         multiply();
+      }
+   }
+ });
+
+ 
